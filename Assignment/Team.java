@@ -13,11 +13,14 @@ public class Team {
         team = new ArrayList<>();
     }
 
+
     public Team(Team team){
         this.team = team.getTeam();
     }
 
     // -----------  Methods ---------------
+
+    // Allows
     public void addEmployee(Employee... worker){
         Collections.addAll(this.team, worker);
     }

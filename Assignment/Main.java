@@ -12,7 +12,8 @@ public class Main {
 
             Employee Andrew = new Employee("Andrew",162);
             Andrew.addCakesCovered(32);
-            Andrew.addWrongCakes(16);
+            Andrew.addWrongCakes(16); // Decreases Cakes
+
 
             Employee Hafsa = new Employee("Hafsa",34);
             Hafsa.addCakesCovered(44);
@@ -34,9 +35,19 @@ public class Main {
             Diane.addCakesCovered(10);
             Diane.addWrongCakes(2);
 
-            Employee Dani = new QualityController("Dani",10);
+            Employee Diana = new Employee("Diana",217); // To Check Alphabetic sort
+            Diana.addCakesCovered(10);
+            Diana.addWrongCakes(2);
 
-            team.addEmployee(Andrew,Hafsa,Ayub,Amaan,Gary,Diane,Dani);
+            QualityController Dani = new QualityController("Dani",10);
+
+            QualityController Dana = new QualityController("Dana",10); // Alphabetic sort in Quality Controllers
+
+            Employee Judit = new QualityController("Judit",520);
+            Judit.addCakesCovered(56);
+            Judit.addWrongCakes(12);
+
+            team.addEmployee(Andrew,Hafsa,Ayub,Amaan,Gary,Diane,Dani,Diana,Dana,Judit);
 
             team.teamSort();
         }
@@ -44,7 +55,7 @@ public class Main {
 
             System.out.println(e.getMessage());
 
-            System.out.println("Team not valid");
+            System.out.println("Team not created");
 
         }
         return team;

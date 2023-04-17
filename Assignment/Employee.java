@@ -91,6 +91,8 @@ public class Employee implements Comparable<Employee>{
         return String.format(util.tableFormat(), getName(), getCakesCovered(),util.getRegular(),util.printCurrency(getWage()));
     }
 
+
+    // Comparable implementation
     @Override
     public int compareTo(Employee emp) {
         int cakes =  emp.getCakesCovered() - this.cakesCovered;
