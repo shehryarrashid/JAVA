@@ -6,16 +6,17 @@ import java.util.Collections;
 
 public class Team {
     private ArrayList<Employee> team;
-    Utils util = new Utils();
+    Utils util;
 
     // Constructors
     public Team(){
-        team = new ArrayList<>();
+        team = new ArrayList<Employee>();
+        util = new Utils();
     }
-
 
     public Team(Team team){
         this.team = team.getTeam();
+        this.util = new Utils();
     }
 
     // -----------  Methods ---------------
@@ -31,8 +32,10 @@ public class Team {
 
     public String summary(){
         double[] values = calculateTotals();
-        return "Payable Cakes : " + (int) values[1] +
-                "\nAmount of wages: " + util.printCurrency(values[0]) + "\n";
+
+        return util.line() + String.format("%50s\n", "SUMMARY") + util.line() +
+        String.format("%-15s| %87s\n", "Payable Cakes", (int) values[1]) +
+        String.format("%-15s| %87s\n", "Total Wage", util.printCurrency(values[0]));
     }
 
     public double[] calculateTotals(){
@@ -62,12 +65,11 @@ public class Team {
 
     @Override
     public String toString() {
-        StringBuilder table = new StringBuilder(String.format(util.tableFormat(), "Name", "Paid Cakes","Employee", "Wage"));
-        table.append("---------------------------------------------------------------------------------------------------------\n");
+        StringBuilder table = new StringBuilder(util.tableHead());
         for (Employee employ : this.team){
             table.append(employ.toString());
         }
-        table.append("---------------------------------------------------------------------------------------------------------\n");
+        table.append(util.line());
         return table.toString();
     }
 }

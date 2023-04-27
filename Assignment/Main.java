@@ -47,7 +47,11 @@ public class Main {
             Judit.addCakesCovered(56);
             Judit.addWrongCakes(12);
 
-            team.addEmployee(Andrew,Hafsa,Ayub,Amaan,Gary,Diane,Dani,Diana,Dana,Judit);
+            Employee Pepe = new Employee("Pepe",520);
+            Pepe.addCakesCovered(56);
+            Pepe.addWrongCakes(12);
+
+            team.addEmployee(Andrew,Hafsa,Ayub,Amaan,Gary,Diane,Dani,Diana,Dana,Judit,Pepe);
 
             team.teamSort();
         }

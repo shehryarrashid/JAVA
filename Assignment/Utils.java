@@ -14,14 +14,6 @@ public class Utils{
         return formatter.format(value);
     }
 
-    public String getQC() {
-        return "QUALITY CONTROLLER";
-    } // Returns Employee Type
-
-    public String getRegular() {
-        return "REGULAR EMP";
-    } // *
-
     public double getEnhanced() {
         return enhanced;
     } // 50 + cakes Pay rate
@@ -34,8 +26,18 @@ public class Utils{
         return "%-35s | %-20s | %-20s | %20s|\n";
     } // table format
 
+    public String tableHead(){
+        return this.line() +
+                String.format(this.tableFormat(), "Name", "Suitable Cakes", "Employee", "Wage") +
+                this.line();
+    }
+
     public String cakesErrorMessage(){
         return "INVALID NUMBER OF CAKES";
     } // USED IN EXCEPTIONS
+
+    public String line(){
+        return "---------------------------------------------------------------------------------------------------------\n";
+    }
 
 }

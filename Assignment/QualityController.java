@@ -14,6 +14,12 @@ public class QualityController extends Employee{
 
     // Override Functions
 
+
+    @Override
+    public String getType() {
+        return "QUALITY CONTROLLER";
+    }
+
     @Override
     public double getWage() {
         double wage = super.getWage() * 1.12;
@@ -22,6 +28,6 @@ public class QualityController extends Employee{
 
     @Override
     public String toString() {
-        return String.format(super.getUtil().tableFormat(), getName(), getCakesCovered(),super.getUtil().getQC(),super.getUtil().printCurrency(this.getWage()));
+        return String.format(super.getUtil().tableFormat(), getName(), getCakesCovered(),this.getType(),super.getUtil().printCurrency(this.getWage()));
     }
 }

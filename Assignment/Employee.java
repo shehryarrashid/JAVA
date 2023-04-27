@@ -69,6 +69,10 @@ public class Employee implements Comparable<Employee>{
         return util;
     }
 
+    public String getType(){
+        return "REGULAR EMPLOYEE";
+    }
+
 
     // Setters
 
@@ -88,7 +92,7 @@ public class Employee implements Comparable<Employee>{
 
     @Override
     public String toString() {
-        return String.format(util.tableFormat(), getName(), getCakesCovered(),util.getRegular(),util.printCurrency(getWage()));
+        return String.format(util.tableFormat(), getName(), getCakesCovered(),this.getType(),util.printCurrency(getWage()));
     }
 
 
